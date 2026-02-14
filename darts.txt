@@ -1,0 +1,28 @@
+import 'dart:math';
+
+import 'package:tuple/tuple.dart';
+
+
+
+Tuple2<double, double>  calcAlt(List<double> H) {
+  // ASSUMPTHION: we assume that the phone side rotation or around phone Z axis is ~ zero
+  // calc alt
+  double altitude = atan2(H[2], H[1]);
+
+  // to degree
+  altitude = altitude * 180 / pi;
+
+  // we need to convet the sign of the angle because we want the Z axis out from the front of the phone not the back,
+  // That is because the the gravty is pulling the screen of the phone not the back
+  double newAlt = altitude * -1;
+  print(newAlt);
+  return Tuple2(newAlt, altitude);
+}
+
+
+void main() {
+  List<double> H = [-0.45, 8.85, -4.5];
+var altitude = calcAlt(H);
+  print(altitude);
+
+}
