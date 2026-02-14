@@ -1,4 +1,5 @@
 ﻿# sensors_equations
+*this project was developed in 2022*
 
 Estimate phone orientation (altitude and azimuth) from raw sensor vectors and evaluate the error range against known sky-object references.
 
